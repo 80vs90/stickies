@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+
+        <title>Stickies</title>
+
+        <style>
+            body {
+                background-color: burlywood;
+            }
+
+            .notes {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .note {
+                background-color: cornsilk;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 5px;
+                box-shadow: 1px 1px gray;
+                width: 300px;
+                height: 500px;
+                margin: 20px;
+                padding: 10px;
+            }
+
+            .add-note {
+                cursor: pointer;
+            }
+
+            .note > textarea {
+                background-color: cornsilk;
+                border-style: none;
+                outline: none;
+                width: 270px;
+                height: 400px;
+                resize: none;
+                margin: 13px 0;
+                padding: 0;
+            }
+
+            .note > .delete-note {
+                float: right;
+                cursor: pointer;
+            }
+
+            #login-content {
+                margin: auto;
+                width: 700px;
+            }
+
+            .login-form > input[type=password] {
+                border: none;
+                background-color: burlywood;
+                outline: none;
+                border-bottom: solid;
+                width: 600px;
+                height: 75px;
+                font-size: 36px;
+                font-family: monospace;
+            }
+
+            .flashes {
+                font-size: 27px;
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
