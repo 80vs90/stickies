@@ -130,18 +130,16 @@ function Note(props, context) {
     };
 
     instance.render = function() {
-        if (this.props.store.editing == this.props.note.id) {
-            var el = e(
-                'textarea', 
-                {
-                    autoFocus: true,
-                    defaultValue: this.props.note.content,
-                    onBlur: this.props.store.onUpdateNote
-                }
-            );
-        } else {
-            var el = e('pre', null, this.props.note.content);
-        }
+        console.log(this.props.store.editing == this.props.note.id);
+        var el = e(
+            'textarea', 
+            {
+                autoFocus: true,
+                defaultValue: this.props.note.content,
+                onBlur: this.props.store.onUpdateNote,
+                readOnly: !(this.props.store.editing == this.props.note.id)
+            }
+        );
 
         return e(
             'div',
